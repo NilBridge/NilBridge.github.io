@@ -178,21 +178,6 @@ module.exports = {
           return dayjs(timestamp).format('YYYY/MM/DD, HH:mm:ss')
         },
       }
-    ],
-    [
-      '@vuepress/plugin-register-components',
-      {
-          components: [
-            {
-              name: 'all-plugins',
-              path: path.resolve(__dirname,'components','pluginsBar.vue')
-            },
-            {
-              name : 'test',
-              path:path.resolve(__dirname,'components','Temp.vue')
-            }
-          ]
-      }
     ]
   ],
 
