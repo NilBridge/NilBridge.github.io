@@ -1,5 +1,6 @@
 const htmlModules = require('./config/htmlModules.js');
 
+const { path } = require('@vuepress/utils')
 module.exports = {
 
   theme: 'vdoing', // 使用依赖包主题
@@ -21,7 +22,7 @@ module.exports = {
       {
         text: '使用', link: '/pages/fdb077/', items: [
           {
-            text: '装载',items:[
+            text: '装载', items: [
               { text: '安装Nillauncher', link: '/pages/fdb077/' },
               { text: '安装NilBridge', link: '/pages/9e9f72/' }
             ]
@@ -29,12 +30,12 @@ module.exports = {
           {
             text: '命令', items: [
               { text: '原生命令', link: '/pages/cf0c33/' },
-              {text:'用户命令' , link: '/pages/23903b/'}
+              { text: '用户命令', link: '/pages/23903b/' }
             ]
           },
           {
             text: '正则表达式', items: [
-              {text:"执行主体",link:'/pages/305618/'},
+              { text: "执行主体", link: '/pages/305618/' },
               { text: '执行模式', link: '/pages/44e819/' }
             ]
           }
@@ -42,20 +43,20 @@ module.exports = {
       },
       {
         text: '开发', link: '/pages/5e0beb/', items: [
-          {text:'初始化' ,link : '/pages/5e0beb/'},
-          {text:"主文件" ,link:'/pages/81428a/'},
-          {text:"监听器",link:"/pages/4665f6/"},
-          {text:'日志',link:'/pages/1f9276/'},
-          {text:"参数对象" ,link:'/pages/c23fa5/'},
-          {text:'vanilla',link:'/pages/7614f8/'},
-          {text:'文件IO',link:'/pages/c96dd0/'},
-          {text:'服务器对象',link:'/pages/1b0b22/'}
+          { text: '初始化', link: '/pages/5e0beb/' },
+          { text: "主文件", link: '/pages/81428a/' },
+          { text: "监听器", link: "/pages/4665f6/" },
+          { text: '日志', link: '/pages/1f9276/' },
+          { text: "参数对象", link: '/pages/c23fa5/' },
+          { text: 'vanilla', link: '/pages/7614f8/' },
+          { text: '文件IO', link: '/pages/c96dd0/' },
+          { text: '服务器对象', link: '/pages/1b0b22/' }
         ]
       },
       { text: '插件', link: '/pages/db78e2/' },
       { text: '案例', link: '/pages/5d571c/' },
       { text: '问答', link: '/pages/9cc27d/' },
-      {text:'增值服务',link:"/pages/396361/"},
+      { text: '增值服务', link: "/pages/396361/" },
       { text: '💖支持', link: '/pages/1b12ed/' },
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
@@ -120,10 +121,10 @@ module.exports = {
 
   // 插件
   plugins: [
-     [require('./plugins/love-me'), { // 鼠标点击爱心特效
-       color: '#11a8cd', // 爱心颜色，默认随机色
-       excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
-     }],
+    [require('./plugins/love-me'), { // 鼠标点击爱心特效
+      color: '#11a8cd', // 爱心颜色，默认随机色
+      excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
+    }],
     ['fulltext-search'], // 全文搜索
 
     // ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
@@ -176,6 +177,21 @@ module.exports = {
           const dayjs = require('dayjs') // https://day.js.org/
           return dayjs(timestamp).format('YYYY/MM/DD, HH:mm:ss')
         },
+      }
+    ],
+    [
+      '@vuepress/plugin-register-components',
+      {
+          components: [
+            {
+              name: 'all-plugins',
+              path: path.resolve(__dirname,'components','pluginsBar.vue')
+            },
+            {
+              name : 'test',
+              path:path.resolve(__dirname,'components','Temp.vue')
+            }
+          ]
       }
     ]
   ],
