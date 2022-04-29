@@ -1,11 +1,7 @@
-import 'o-ui/lib/o-ui.css';
-
-export default ({Vue, options, router, siteData}) => {
-	Vue.mixin({
-		mounted() {
-			import('o-ui').then((m) => {
-				Vue.use(m.default);
-			});
-		},
-	});
-};
+import Vue from 'vue';
+import myComponent from '../components/my-component.js';
+export default config => {
+  if (!config.isServer) {
+      Vue.component('myComponent', myComponent);
+  }
+}
