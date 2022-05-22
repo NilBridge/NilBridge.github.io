@@ -38,6 +38,11 @@ module.exports = {
               { text: "执行主体", link: '/pages/305618/' },
               { text: '执行模式', link: '/pages/44e819/' }
             ]
+          },
+          {
+            text:'模块管理器',items:[
+              {text:'mgm' , link:'/pages/305678/'}
+            ]
           }
         ]
       },
