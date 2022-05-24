@@ -1,6 +1,5 @@
 const htmlModules = require('./config/htmlModules.js');
 
-const { path } = require('@vuepress/utils')
 module.exports = {
 
   theme: 'vdoing', // 使用依赖包主题
@@ -59,7 +58,7 @@ module.exports = {
         ]
       },
       { text: '模块', link: 'http://modules.nilbridge.site/' },
-      { text: '案例', link: '/pages/5d571c' },
+      { text: '案例', link: '/pages/5d571c/' },
       { text: '问答', link: '/pages/9cc27d/' },
       { text: '增值服务', link: "/pages/396361/" },
       { text: '💖支持', link: '/pages/1b12ed/' },
